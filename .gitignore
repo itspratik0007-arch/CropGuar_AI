@@ -1,0 +1,43 @@
+# Virtual environments & Dependencies
+venv/
+backend/venv/
+node_modules/
+frontend/node_modules/
+.venv/
+
+# Environment variables & secrets (CRITICAL: Never commit secrets)
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+*.local
+
+# Database storage & test files
+*.db
+*.sqlite
+*.sqlite3
+cropshield.db
+test_cropshield*.db
+
+# Model binaries / weights (if not tracked in LFS)
+# backend/models/*.onnx
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Build distributions
+dist/
+frontend/dist/
+build/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.zip
+.vercel

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --green: #245c3a;
+    --green-2: #37774b;
+    --lime: #dcecc9;
+    --mint: #eff5e9;
+    --bg: #f7f8f4;
+    --ink: #26332b;
+    --muted: #788279;
+    --line: #e7ebe3;
+    --white: #fff;
+    --amber: #a76d14;
+    --amber-bg: #fff5df;
+    --blue: #416c9c;
+    --blue-bg: #edf4fb;
+    --rose: #a24e4a;
+    --rose-bg: #faeeee;
+    --shadow: 0 8px 28px rgba(38, 51, 43, 0.045);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, strong, .font-heading {
+    font-family: 'Manrope', 'DM Sans', sans-serif;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
