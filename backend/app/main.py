@@ -19,9 +19,9 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="CropShield AI API",
+    title="CropGuard AI API",
     version="1.2.0",
-    description="Backend API for CropShield AI: Authentication, Plantopedia, Conversational AI Plant Assistant, User Dashboard, Demo Stores, and Plant Disease Detection.",
+    description="Backend API for CropGuard AI: Authentication, Plantopedia, Conversational AI Plant Assistant, User Dashboard, Demo Stores, and Plant Disease Detection.",
     lifespan=lifespan
 )
 
@@ -53,7 +53,7 @@ def get_disease_history_alias(
 @app.get("/")
 def root():
     return {
-        "app": "CropShield AI API",
+        "app": "CropGuard AI API",
         "phase": "Phase 1 Implementation",
         "docs_url": "/docs",
         "status": "healthy"

@@ -3,8 +3,19 @@ import type { AuthResponse, User, Plant, PlantSearchResponse, DashboardSummary, 
 const rawBase = import.meta.env.VITE_API_BASE_URL || '/api';
 const API_BASE = rawBase.replace(/\/+$/, '');
 
+function getStoredToken(): string | null {
+  return localStorage.getItem('cropguard_token') || localStorage.getItem('cropshield_token');
+}
+
+function clearStoredAuth(): void {
+  localStorage.removeItem('cropguard_token');
+  localStorage.removeItem('cropguard_user');
+  localStorage.removeItem('cropshield_token');
+  localStorage.removeItem('cropshield_user');
+}
+
 function getAuthHeader(): Record<string, string> {
-  const token = localStorage.getItem('cropshield_token');
+  const token = getStoredToken();
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
@@ -21,8 +32,7 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
   });
 
   if (response.status === 401) {
-    localStorage.removeItem('cropshield_token');
-    localStorage.removeItem('cropshield_user');
+    clearStoredAuth();
     window.dispatchEvent(new Event('auth:unauthorized'));
     throw new Error('Your session has expired. Please log in again.');
   }
@@ -110,7 +120,7 @@ export const api = {
     formData.append('crop', crop);
     formData.append('file', file);
 
-    const token = localStorage.getItem('cropshield_token');
+    const token = getStoredToken();
     const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
 
     const response = await fetch(`${API_BASE}/disease/detect`, {
@@ -120,8 +130,7 @@ export const api = {
     });
 
     if (response.status === 401) {
-      localStorage.removeItem('cropshield_token');
-      localStorage.removeItem('cropshield_user');
+      clearStoredAuth();
       window.dispatchEvent(new Event('auth:unauthorized'));
       throw new Error('Your session has expired. Please log in again.');
     }

@@ -21,7 +21,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Originating in western South America, domesticated tomatoes were cultivated by indigenous Mesoamericans before European global distribution.",
         "image_url": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Wheat",
@@ -43,7 +43,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "One of the very first crops domesticated in the Fertile Crescent around 9600 BCE, shaping modern human civilization.",
         "image_url": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Rice",
@@ -65,7 +65,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Asian rice domestication is dated between 8,200 and 13,500 years ago along the Pearl River Valley of China.",
         "image_url": "https://images.unsplash.com/photo-1536657464919-892534f60d6e?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Mango",
@@ -87,7 +87,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Native to South Asia, mango has been cultivated in India for over 4,000 years and is the national fruit of India, the Philippines, and Pakistan.",
         "image_url": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Neem",
@@ -109,7 +109,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Neem is often honored as the 'Village Pharmacy' in traditional Indian Ayurveda due to multiple beneficial uses of bark, leaves, flowers, and seeds.",
         "image_url": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Chilli",
@@ -131,7 +131,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Capsaicin produced in the placenta of chilli pods evolved naturally to deter mammalian herbivores while allowing birds (which are unaffected) to disperse seeds.",
         "image_url": "https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Potato",
@@ -153,7 +153,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Indigenous to the Andes of Peru and Bolivia, where thousands of native heirloom varieties have been cultivated for millennia.",
         "image_url": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Cotton",
@@ -175,7 +175,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Cotton fibers are almost pure cellulose and have been woven into cloth since at least 5000 BCE in the Indus Valley Civilization.",
         "image_url": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Banana",
@@ -197,7 +197,7 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "The banana plant is botanically a giant perennial herb, and the trunk is a 'pseudostem' composed of tightly packed leaf sheaths.",
         "image_url": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     },
     {
         "common_name": "Soybean",
@@ -219,6 +219,6 @@ SEED_PLANTS: List[Dict[str, Any]] = [
         "facts": "Domestication originated in East Asia, where it has served as an essential component of soy foods like tofu, miso, and edamame for over 3,000 years.",
         "image_url": "https://images.unsplash.com/photo-1599818816934-2e9eb90a36eb?w=800&auto=format&fit=crop&q=80",
         "source_type": "curated_local",
-        "data_source": "CropShield Botanical & Agronomic Knowledgebase"
+        "data_source": "CropGuard Botanical & Agronomic Knowledgebase"
     }
 ]

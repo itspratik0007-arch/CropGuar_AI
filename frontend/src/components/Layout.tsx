@@ -28,7 +28,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTitle }) => {
   const [showGuide, setShowGuide] = useState(false);
 
   const getInitials = (name?: string) => {
-    if (!name) return 'CS';
+    if (!name) return 'CG';
     return name
       .split(' ')
       .map((n) => n[0])
@@ -66,7 +66,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTitle }) => {
             </span>
             <div>
               <div className="font-extrabold text-base tracking-tight leading-none text-[#26332b]">
-                CropShield<span className="text-[#37774b]"> AI</span>
+                CropGuard<span className="text-[#37774b]"> AI</span>
               </div>
               <small className="block text-[10px] text-[#8a948a] font-medium tracking-wide mt-0.5">
                 Crop health intelligence
@@ -194,7 +194,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTitle }) => {
             <div className="w-6 h-6 rounded-lg bg-[#e3ecd8] text-[#245c3a] flex items-center justify-center text-xs font-bold mb-2">
               <HelpCircle className="w-3.5 h-3.5" />
             </div>
-            <strong className="block text-xs font-bold text-[#26332b]">CropShield Guide</strong>
+            <strong className="block text-xs font-bold text-[#26332b]">CropGuard Guide</strong>
             <p className="text-[11px] text-[#788279] mt-0.5 mb-2 leading-tight">
               Phase 1 includes Plantopedia, Saved Bookmarks & Demo Stores.
             </p>
@@ -293,7 +293,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTitle }) => {
         {/* Footer */}
         <footer className="px-6 py-4 border-t border-[#e7ebe3] text-[11px] text-[#9aa196] flex flex-col sm:flex-row items-center justify-between gap-2 max-w-7xl w-full mx-auto">
           <div className="flex items-center gap-1.5 font-bold text-[#6f7e6c]">
-            <span>✳ CropShield AI</span>
+            <span>✳ CropGuard AI</span>
             <span className="font-normal text-[#9aa196]">· Phase 1 Working Application</span>
           </div>
           <div>Database & API Connected · Argon2id Authenticated</div>
@@ -306,7 +306,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTitle }) => {
           <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-[#e7ebe3] shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#8b958a]">
-                CropShield AI Phase 1
+                CropGuard AI Phase 1
               </span>
               <button
                 onClick={() => setShowGuide(false)}

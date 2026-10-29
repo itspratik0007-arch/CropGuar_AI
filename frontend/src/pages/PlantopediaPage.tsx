@@ -206,7 +206,7 @@ export const PlantopediaPage: React.FC = () => {
           role: 'assistant',
           content: target
             ? `Hello! I am your AI Agronomic Assistant for **${target.common_name}** (*${target.scientific_name}*).\n\nYou can ask me about soil pH, water cycles, fertilizer programs, yellow leaves, fungal blights, or request care steps in simple terms or Marathi.`
-            : `Hello! I am CropShield AI's Botanical & Plant Health Assistant. Select any crop from Plantopedia or ask me any crop care question to begin!`,
+            : `Hello! I am CropGuard AI's Botanical & Plant Health Assistant. Select any crop from Plantopedia or ask me any crop care question to begin!`,
           created_at: new Date().toISOString()
         }
       ]);
@@ -914,7 +914,7 @@ export const PlantopediaPage: React.FC = () => {
                 <Sparkles className="w-3 h-3 text-[#245c3a] shrink-0" />
                 <span className="truncate">
                   {isFallbackMode
-                    ? 'CropShield Verified Knowledgebase (Offline Mode)'
+                    ? 'CropGuard Verified Knowledgebase (Offline Mode)'
                     : activeModel
                     ? `Provider: ${activeModel}`
                     : 'Grounded Agricultural Model'}
@@ -982,7 +982,7 @@ export const PlantopediaPage: React.FC = () => {
                       <div className={`mt-2 pt-1 border-t text-[9px] flex items-center justify-between ${
                         isAssistant ? 'border-[#f2f4ef] text-[#939c90]' : 'border-white/20 text-white/70'
                       }`}>
-                        <span>{isAssistant ? 'CropShield AI' : 'You'}</span>
+                        <span>{isAssistant ? 'CropGuard AI' : 'You'}</span>
                         <span>{new Date(m.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                       </div>
                     </div>

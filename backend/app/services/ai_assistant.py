@@ -7,7 +7,7 @@ from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """You are CropShield AI's expert Agricultural and Botanical Advisor.
+SYSTEM_PROMPT = """You are CropGuard AI's expert Agricultural and Botanical Advisor.
 Your mission is to provide accurate, reliable, practical, and scientifically sound crop guidance and plant care advice to farmers, agronomists, and home growers.
 
 Core Persona & Communication Guidelines:
@@ -74,7 +74,7 @@ class AiAssistantService:
         """
         grounding_sources = []
         if plant_context:
-            source_name = plant_context.get("data_source") or "CropShield Botanical Knowledgebase"
+            source_name = plant_context.get("data_source") or "CropGuard Botanical Knowledgebase"
             grounding_sources.append(f"{plant_context.get('common_name')} ({plant_context.get('scientific_name')}): {source_name}")
         if weather_context:
             grounding_sources.append(f"Weather Station ({weather_context.get('location')}): Temp {weather_context.get('temp_c')}°C, Humidity {weather_context.get('humidity')}%")
@@ -296,7 +296,7 @@ class AiAssistantService:
 
         disclaimer_banner = ""
         if is_missing_key:
-            disclaimer_banner = "> [!NOTE]\n> **Configuration Note:** `GEMINI_API_KEY` is not currently set in `.env`. Serving verified agronomic guidance directly from CropShield's curated database.\n\n"
+            disclaimer_banner = "> [!NOTE]\n> **Configuration Note:** `GEMINI_API_KEY` is not currently set in `.env`. Serving verified agronomic guidance directly from CropGuard's curated database.\n\n"
         elif error_detail:
             disclaimer_banner = f"> [!WARNING]\n> **Service Notice:** External AI provider connection failed ({error_detail}). Serving verified agronomic guidance from local database records.\n\n"
 
@@ -324,7 +324,7 @@ class AiAssistantService:
         # Generic plant context fallback
         if not plant_context:
             return (
-                f"{disclaimer_banner}### CropShield Botanical Assistant\n\n"
+                f"{disclaimer_banner}### CropGuard Botanical Assistant\n\n"
                 f"Welcome! To give you the most accurate growing advice, please select a specific crop from the Plantopedia library or mention the crop name.\n\n"
                 f"I can provide complete guidance on:\n"
                 f"- **Soil preparation and suitable pH**\n"

@@ -10,7 +10,7 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ childr
     return (
       <div className="min-h-screen bg-[#f7f8f4] flex flex-col items-center justify-center text-xs text-[#6a7969]">
         <Loader2 className="w-8 h-8 animate-spin text-[#245c3a] mb-2" />
-        <span>Authenticating session with CropShield database...</span>
+        <span>Authenticating session with CropGuard database...</span>
       </div>
     );
   }

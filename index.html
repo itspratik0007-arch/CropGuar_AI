@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CropShield AI | Crop Health Intelligence</title>
+  <title>CropGuard AI | Crop Health Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="#" data-page="dashboard">
-      <span class="brand-mark">✳</span><span>CropShield<span class="brand-ai"> AI</span><small>Crop health intelligence</small></span>
+      <span class="brand-mark">✳</span><span>CropGuard<span class="brand-ai"> AI</span><small>Crop health
+          intelligence</small></span>
     </a>
     <div class="workspace-label">WORKSPACE</div>
     <nav class="nav-list" aria-label="Main navigation">
@@ -24,8 +29,15 @@
       <button class="nav-item" data-page="stores"><span class="nav-icon">⌖</span>Nearby Stores</button>
     </nav>
     <div class="sidebar-bottom">
-      <div class="help-card"><div class="help-icon">?</div><strong>Need a hand?</strong><p>Find your way around CropShield AI.</p><button id="helpBtn">View quick guide <span>↗</span></button></div>
-      <div class="user-mini"><div class="avatar">PJ</div><div><strong>Pratik Jadhav</strong><small>Farmer workspace</small></div><button class="dots" aria-label="More options">···</button></div>
+      <div class="help-card">
+        <div class="help-icon">?</div><strong>Need a hand?</strong>
+        <p>Find your way around CropGuard AI.</p><button id="helpBtn">View quick guide <span>↗</span></button>
+      </div>
+      <div class="user-mini">
+        <div class="avatar">PJ</div>
+        <div><strong>Pratik Jadhav</strong><small>Farmer workspace</small></div><button class="dots"
+          aria-label="More options">···</button>
+      </div>
     </div>
   </aside>
 
@@ -34,116 +46,469 @@
       <button class="mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
       <div class="breadcrumb">Workspace <span>/</span> <strong id="crumb">Dashboard</strong></div>
       <div class="top-actions">
-        <div class="location-pill"><span>⌖</span><span id="locationText">Set farm location</span><button id="locationBtn">Edit</button></div>
+        <div class="location-pill"><span>⌖</span><span id="locationText">Set farm location</span><button
+            id="locationBtn">Edit</button></div>
         <button class="icon-btn notification" id="notificationBtn" aria-label="Notifications">♧<i></i></button>
-        <button class="profile-btn"><span class="avatar small">PJ</span><span class="profile-name">Pratik</span><span>⌄</span></button>
+        <button class="profile-btn"><span class="avatar small">PJ</span><span
+            class="profile-name">Pratik</span><span>⌄</span></button>
       </div>
     </header>
 
     <section class="page active" id="page-dashboard">
       <div class="welcome-row">
-        <div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR FARM, AT A GLANCE</div><h1>Good morning, Pratik <span class="sun">☀</span></h1><p class="subhead">A clearer picture of your crops starts here.</p></div>
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR FARM, AT A GLANCE</div>
+          <h1>Good morning, Pratik <span class="sun">☀</span></h1>
+          <p class="subhead">A clearer picture of your crops starts here.</p>
+        </div>
         <button class="btn btn-primary" data-go="analyze"><span>＋</span> Analyze a crop</button>
       </div>
-      <div class="notice-strip"><span class="notice-symbol">✦</span><div><strong>Make every field check count.</strong><span> Add your crops to get more relevant disease-risk insights and advice.</span></div><button data-go="crops">Add a crop <span>→</span></button></div>
-      <div class="section-heading"><div><h2>Your overview</h2><p>Quick access to your crop-health workspace.</p></div><span class="updated">DEMO WORKSPACE</span></div>
+      <div class="notice-strip"><span class="notice-symbol">✦</span>
+        <div><strong>Make every field check count.</strong><span> Add your crops to get more relevant disease-risk
+            insights and advice.</span></div><button data-go="crops">Add a crop <span>→</span></button>
+      </div>
+      <div class="section-heading">
+        <div>
+          <h2>Your overview</h2>
+          <p>Quick access to your crop-health workspace.</p>
+        </div><span class="updated">DEMO WORKSPACE</span>
+      </div>
       <div class="metric-grid">
-        <article class="metric-card"><div class="metric-top"><span class="metric-icon green">♧</span><span class="metric-label">MY CROPS</span></div><div class="metric-value" id="cropCount">2 <small>crops</small></div><p>Keep your crop records in one place.</p><button class="text-link" data-go="crops">View my crops <span>→</span></button></article>
-        <article class="metric-card"><div class="metric-top"><span class="metric-icon yellow">◉</span><span class="metric-label">RISK CHECK</span></div><div class="metric-value">Ready <small>to assess</small></div><p>Use crop and local conditions for a risk assessment.</p><button class="text-link" data-go="risk">Check risk factors <span>→</span></button></article>
-        <article class="metric-card"><div class="metric-top"><span class="metric-icon blue">⌕</span><span class="metric-label">CROP ANALYSIS</span></div><div class="metric-value">Start <small>an analysis</small></div><p>Upload a clear leaf or plant image.</p><button class="text-link" data-go="analyze">Analyze an image <span>→</span></button></article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon green">♧</span><span class="metric-label">MY CROPS</span>
+          </div>
+          <div class="metric-value" id="cropCount">2 <small>crops</small></div>
+          <p>Keep your crop records in one place.</p><button class="text-link" data-go="crops">View my crops
+            <span>→</span></button>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon yellow">◉</span><span class="metric-label">RISK CHECK</span>
+          </div>
+          <div class="metric-value">Ready <small>to assess</small></div>
+          <p>Use crop and local conditions for a risk assessment.</p><button class="text-link" data-go="risk">Check risk
+            factors <span>→</span></button>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span class="metric-icon blue">⌕</span><span class="metric-label">CROP ANALYSIS</span>
+          </div>
+          <div class="metric-value">Start <small>an analysis</small></div>
+          <p>Upload a clear leaf or plant image.</p><button class="text-link" data-go="analyze">Analyze an image
+            <span>→</span></button>
+        </article>
       </div>
       <div class="content-grid">
-        <article class="panel crops-panel"><div class="panel-heading"><div><h2>Your crops</h2><p>Example records in this demo</p></div><button class="quiet-btn" data-go="crops">View all <span>→</span></button></div>
-          <div class="crop-row"><div class="crop-thumb tomato"><span>🍅</span></div><div class="crop-info"><strong>Tomato</strong><span>Vegetable · Demo field</span><small>Last checked: Not yet analyzed</small></div><button class="row-action" data-analyze-crop="Tomato">Analyze <span>→</span></button></div>
-          <div class="crop-row"><div class="crop-thumb wheat"><span>🌾</span></div><div class="crop-info"><strong>Wheat</strong><span>Cereal · Demo field</span><small>Last checked: Not yet analyzed</small></div><button class="row-action" data-analyze-crop="Wheat">Analyze <span>→</span></button></div>
+        <article class="panel crops-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Your crops</h2>
+              <p>Example records in this demo</p>
+            </div><button class="quiet-btn" data-go="crops">View all <span>→</span></button>
+          </div>
+          <div class="crop-row">
+            <div class="crop-thumb tomato"><span>🍅</span></div>
+            <div class="crop-info"><strong>Tomato</strong><span>Vegetable · Demo field</span><small>Last checked: Not
+                yet analyzed</small></div><button class="row-action" data-analyze-crop="Tomato">Analyze
+              <span>→</span></button>
+          </div>
+          <div class="crop-row">
+            <div class="crop-thumb wheat"><span>🌾</span></div>
+            <div class="crop-info"><strong>Wheat</strong><span>Cereal · Demo field</span><small>Last checked: Not yet
+                analyzed</small></div><button class="row-action" data-analyze-crop="Wheat">Analyze
+              <span>→</span></button>
+          </div>
           <button class="add-crop-row" data-go="crops"><span>＋</span> Add another crop</button>
         </article>
-        <article class="panel next-panel"><div class="panel-heading"><div><h2>Suggested next steps</h2><p>Build a useful crop-health record</p></div><span class="sparkle">✳</span></div>
-          <button class="step-item" data-go="crops"><span class="step-num">01</span><span><strong>Add field details</strong><small>Record crop variety, sowing date and growth stage.</small></span><span class="step-arrow">↗</span></button>
-          <button class="step-item" data-go="analyze"><span class="step-num">02</span><span><strong>Upload a crop photo</strong><small>Start an image-based disease check.</small></span><span class="step-arrow">↗</span></button>
-          <button class="step-item" data-go="risk"><span class="step-num">03</span><span><strong>Review risk factors</strong><small>See what information a risk assessment needs.</small></span><span class="step-arrow">↗</span></button>
+        <article class="panel next-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Suggested next steps</h2>
+              <p>Build a useful crop-health record</p>
+            </div><span class="sparkle">✳</span>
+          </div>
+          <button class="step-item" data-go="crops"><span class="step-num">01</span><span><strong>Add field
+                details</strong><small>Record crop variety, sowing date and growth stage.</small></span><span
+              class="step-arrow">↗</span></button>
+          <button class="step-item" data-go="analyze"><span class="step-num">02</span><span><strong>Upload a crop
+                photo</strong><small>Start an image-based disease check.</small></span><span
+              class="step-arrow">↗</span></button>
+          <button class="step-item" data-go="risk"><span class="step-num">03</span><span><strong>Review risk
+                factors</strong><small>See what information a risk assessment needs.</small></span><span
+              class="step-arrow">↗</span></button>
         </article>
       </div>
-      <div class="disclaimer"><span>ⓘ</span> This is a UI prototype. Crop records and AI results are illustrative; live weather, diagnosis, and risk predictions are not connected.</div>
+      <div class="disclaimer"><span>ⓘ</span> This is a UI prototype. Crop records and AI results are illustrative; live
+        weather, diagnosis, and risk predictions are not connected.</div>
     </section>
 
     <section class="page" id="page-crops">
-      <div class="page-title-row"><div><div class="eyebrow">FIELD MANAGEMENT</div><h1>My Crops</h1><p class="subhead">Keep crop details organized for more relevant guidance.</p></div><button class="btn btn-primary" id="addCropBtn">＋ Add a crop</button></div>
-      <div class="filter-row"><div class="searchbox"><span>⌕</span><input id="cropSearch" placeholder="Search your crops..." /></div><span class="small-muted" id="cropListCount">2 crop records</span></div>
+      <div class="page-title-row">
+        <div>
+          <div class="eyebrow">FIELD MANAGEMENT</div>
+          <h1>My Crops</h1>
+          <p class="subhead">Keep crop details organized for more relevant guidance.</p>
+        </div><button class="btn btn-primary" id="addCropBtn">＋ Add a crop</button>
+      </div>
+      <div class="filter-row">
+        <div class="searchbox"><span>⌕</span><input id="cropSearch" placeholder="Search your crops..." /></div><span
+          class="small-muted" id="cropListCount">2 crop records</span>
+      </div>
       <div class="crop-card-grid" id="cropCards">
-        <article class="crop-large-card" data-crop-name="tomato"><div class="crop-hero tomato-hero"><span>🍅</span><div class="crop-badge">DEMO RECORD</div></div><div class="crop-large-body"><div class="crop-title"><div><h3>Tomato</h3><p>Vegetable crop</p></div><span class="status neutral">Not analyzed</span></div><div class="detail-list"><div><span>Field location</span><strong>Not added</strong></div><div><span>Sowing date</span><strong>Not added</strong></div><div><span>Growth stage</span><strong>Not specified</strong></div></div><div class="card-actions"><button class="btn btn-outline" data-edit-crop="Tomato">Edit details</button><button class="btn btn-primary" data-analyze-crop="Tomato">Analyze crop</button></div></div></article>
-        <article class="crop-large-card" data-crop-name="wheat"><div class="crop-hero wheat-hero"><span>🌾</span><div class="crop-badge">DEMO RECORD</div></div><div class="crop-large-body"><div class="crop-title"><div><h3>Wheat</h3><p>Cereal crop</p></div><span class="status neutral">Not analyzed</span></div><div class="detail-list"><div><span>Field location</span><strong>Not added</strong></div><div><span>Sowing date</span><strong>Not added</strong></div><div><span>Growth stage</span><strong>Not specified</strong></div></div><div class="card-actions"><button class="btn btn-outline" data-edit-crop="Wheat">Edit details</button><button class="btn btn-primary" data-analyze-crop="Wheat">Analyze crop</button></div></div></article>
+        <article class="crop-large-card" data-crop-name="tomato">
+          <div class="crop-hero tomato-hero"><span>🍅</span>
+            <div class="crop-badge">DEMO RECORD</div>
+          </div>
+          <div class="crop-large-body">
+            <div class="crop-title">
+              <div>
+                <h3>Tomato</h3>
+                <p>Vegetable crop</p>
+              </div><span class="status neutral">Not analyzed</span>
+            </div>
+            <div class="detail-list">
+              <div><span>Field location</span><strong>Not added</strong></div>
+              <div><span>Sowing date</span><strong>Not added</strong></div>
+              <div><span>Growth stage</span><strong>Not specified</strong></div>
+            </div>
+            <div class="card-actions"><button class="btn btn-outline" data-edit-crop="Tomato">Edit
+                details</button><button class="btn btn-primary" data-analyze-crop="Tomato">Analyze crop</button></div>
+          </div>
+        </article>
+        <article class="crop-large-card" data-crop-name="wheat">
+          <div class="crop-hero wheat-hero"><span>🌾</span>
+            <div class="crop-badge">DEMO RECORD</div>
+          </div>
+          <div class="crop-large-body">
+            <div class="crop-title">
+              <div>
+                <h3>Wheat</h3>
+                <p>Cereal crop</p>
+              </div><span class="status neutral">Not analyzed</span>
+            </div>
+            <div class="detail-list">
+              <div><span>Field location</span><strong>Not added</strong></div>
+              <div><span>Sowing date</span><strong>Not added</strong></div>
+              <div><span>Growth stage</span><strong>Not specified</strong></div>
+            </div>
+            <div class="card-actions"><button class="btn btn-outline" data-edit-crop="Wheat">Edit
+                details</button><button class="btn btn-primary" data-analyze-crop="Wheat">Analyze crop</button></div>
+          </div>
+        </article>
       </div>
       <div class="empty-state hidden" id="noCrops">No matching crops found. Try another search.</div>
     </section>
 
     <section class="page" id="page-analyze">
-      <div class="page-title-row"><div><div class="eyebrow">IMAGE-BASED CHECK</div><h1>Crop Analysis</h1><p class="subhead">Upload a clear plant image to begin a disease-check workflow.</p></div><span class="status neutral">Prototype mode</span></div>
+      <div class="page-title-row">
+        <div>
+          <div class="eyebrow">IMAGE-BASED CHECK</div>
+          <h1>Crop Analysis</h1>
+          <p class="subhead">Upload a clear plant image to begin a disease-check workflow.</p>
+        </div><span class="status neutral">Prototype mode</span>
+      </div>
       <div class="analysis-layout">
-        <article class="panel upload-panel"><div class="panel-heading"><div><h2>Upload crop image</h2><p>Use a sharp, well-lit image of the affected plant part.</p></div><span class="upload-icon">↥</span></div>
-          <label class="field-label" for="analysisCrop">Crop type</label><select id="analysisCrop"><option>Tomato</option><option>Wheat</option><option>Rice</option><option>Cotton</option><option>Other</option></select>
-          <label class="field-label" for="growthStage">Growth stage <span class="optional">Optional</span></label><select id="growthStage"><option value="">Select growth stage</option><option>Seedling</option><option>Vegetative</option><option>Flowering</option><option>Fruiting / grain filling</option><option>Maturity</option></select>
-          <label class="upload-zone" for="imageInput" id="uploadZone"><div class="upload-cloud">↑</div><strong>Drop your image here</strong><span>or <b>browse files</b> from your device</span><small>JPG, PNG or WEBP · Use a clear crop photo</small><img id="imagePreview" alt="Selected crop preview" class="image-preview hidden"></label>
+        <article class="panel upload-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Upload crop image</h2>
+              <p>Use a sharp, well-lit image of the affected plant part.</p>
+            </div><span class="upload-icon">↥</span>
+          </div>
+          <label class="field-label" for="analysisCrop">Crop type</label><select id="analysisCrop">
+            <option>Tomato</option>
+            <option>Wheat</option>
+            <option>Rice</option>
+            <option>Cotton</option>
+            <option>Other</option>
+          </select>
+          <label class="field-label" for="growthStage">Growth stage <span
+              class="optional">Optional</span></label><select id="growthStage">
+            <option value="">Select growth stage</option>
+            <option>Seedling</option>
+            <option>Vegetative</option>
+            <option>Flowering</option>
+            <option>Fruiting / grain filling</option>
+            <option>Maturity</option>
+          </select>
+          <label class="upload-zone" for="imageInput" id="uploadZone">
+            <div class="upload-cloud">↑</div><strong>Drop your image here</strong><span>or <b>browse files</b> from your
+              device</span><small>JPG, PNG or WEBP · Use a clear crop photo</small><img id="imagePreview"
+              alt="Selected crop preview" class="image-preview hidden">
+          </label>
           <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
-          <div class="upload-tip"><span>ⓘ</span><span>Photograph the affected area in natural light. Include the whole leaf when possible.</span></div>
+          <div class="upload-tip"><span>ⓘ</span><span>Photograph the affected area in natural light. Include the whole
+              leaf when possible.</span></div>
           <button class="btn btn-primary btn-wide" id="analyzeBtn" disabled>Analyze image <span>→</span></button>
           <p class="tiny-note">Demo only: this prototype does not send images to an AI model.</p>
         </article>
-        <aside class="panel guidance-panel"><div class="guidance-leaf">♧</div><h2>Get a more useful result</h2><p>Image quality matters. A few simple checks can help.</p><ul><li><span>✓</span> Keep the affected leaf in focus.</li><li><span>✓</span> Avoid harsh shadows and blur.</li><li><span>✓</span> Include visible spots, edges or discoloration.</li><li><span>✓</span> Add crop stage if you know it.</li></ul><div class="privacy-note"><strong>Before you upload</strong><p>Only upload images you have permission to use. Your image stays in this local demo page.</p></div></aside>
+        <aside class="panel guidance-panel">
+          <div class="guidance-leaf">♧</div>
+          <h2>Get a more useful result</h2>
+          <p>Image quality matters. A few simple checks can help.</p>
+          <ul>
+            <li><span>✓</span> Keep the affected leaf in focus.</li>
+            <li><span>✓</span> Avoid harsh shadows and blur.</li>
+            <li><span>✓</span> Include visible spots, edges or discoloration.</li>
+            <li><span>✓</span> Add crop stage if you know it.</li>
+          </ul>
+          <div class="privacy-note"><strong>Before you upload</strong>
+            <p>Only upload images you have permission to use. Your image stays in this local demo page.</p>
+          </div>
+        </aside>
       </div>
-      <div class="result-panel panel hidden" id="analysisResult"><div class="result-check">✓</div><div><div class="eyebrow">UPLOAD CHECK COMPLETE</div><h2>Image selected successfully</h2><p>Your image is ready for the next step. A real disease prediction requires the CropShield AI model and backend, which are not connected in this demo.</p></div><button class="btn btn-outline" id="resetAnalysis">Choose another image</button></div>
+      <div class="result-panel panel hidden" id="analysisResult">
+        <div class="result-check">✓</div>
+        <div>
+          <div class="eyebrow">UPLOAD CHECK COMPLETE</div>
+          <h2>Image selected successfully</h2>
+          <p>Your image is ready for the next step. A real disease prediction requires the CropGuard AI model and
+            backend, which are not connected in this demo.</p>
+        </div><button class="btn btn-outline" id="resetAnalysis">Choose another image</button>
+      </div>
     </section>
 
     <section class="page" id="page-risk">
-      <div class="page-title-row"><div><div class="eyebrow">EARLY-ACTION WORKSPACE</div><h1>Risk Prediction</h1><p class="subhead">Review the factors needed to estimate potential crop disease risk.</p></div><span class="status pending">Inputs needed</span></div>
-      <div class="risk-banner"><div class="risk-symbol">◉</div><div><strong>Your risk assessment is not available yet</strong><p>Add crop and environmental information before generating a meaningful assessment. No risk score is being calculated in this prototype.</p></div></div>
+      <div class="page-title-row">
+        <div>
+          <div class="eyebrow">EARLY-ACTION WORKSPACE</div>
+          <h1>Risk Prediction</h1>
+          <p class="subhead">Review the factors needed to estimate potential crop disease risk.</p>
+        </div><span class="status pending">Inputs needed</span>
+      </div>
+      <div class="risk-banner">
+        <div class="risk-symbol">◉</div>
+        <div><strong>Your risk assessment is not available yet</strong>
+          <p>Add crop and environmental information before generating a meaningful assessment. No risk score is being
+            calculated in this prototype.</p>
+        </div>
+      </div>
       <div class="risk-grid">
-        <article class="panel risk-form"><div class="panel-heading"><div><h2>Assessment inputs</h2><p>Use current, field-specific information where available.</p></div></div>
-          <label class="field-label" for="riskCrop">Select crop</label><select id="riskCrop"><option>Tomato</option><option>Wheat</option><option>Rice</option><option>Cotton</option><option>Other</option></select>
-          <div class="form-two"><div><label class="field-label" for="humidity">Relative humidity (%)</label><input id="humidity" type="number" min="0" max="100" placeholder="e.g. 78"></div><div><label class="field-label" for="rainfall">Recent rainfall (mm)</label><input id="rainfall" type="number" min="0" placeholder="e.g. 12"></div></div>
-          <div class="form-two"><div><label class="field-label" for="soil">Soil condition</label><select id="soil"><option value="">Select if known</option><option>Dry</option><option>Moist</option><option>Waterlogged</option></select></div><div><label class="field-label" for="stageRisk">Growth stage</label><select id="stageRisk"><option value="">Select stage</option><option>Seedling</option><option>Vegetative</option><option>Flowering</option><option>Fruiting / grain filling</option><option>Maturity</option></select></div></div>
-          <button class="btn btn-primary btn-wide" id="riskBtn">Review inputs <span>→</span></button><p class="tiny-note">This checks whether the form is complete; it does not calculate disease risk.</p>
+        <article class="panel risk-form">
+          <div class="panel-heading">
+            <div>
+              <h2>Assessment inputs</h2>
+              <p>Use current, field-specific information where available.</p>
+            </div>
+          </div>
+          <label class="field-label" for="riskCrop">Select crop</label><select id="riskCrop">
+            <option>Tomato</option>
+            <option>Wheat</option>
+            <option>Rice</option>
+            <option>Cotton</option>
+            <option>Other</option>
+          </select>
+          <div class="form-two">
+            <div><label class="field-label" for="humidity">Relative humidity (%)</label><input id="humidity"
+                type="number" min="0" max="100" placeholder="e.g. 78"></div>
+            <div><label class="field-label" for="rainfall">Recent rainfall (mm)</label><input id="rainfall"
+                type="number" min="0" placeholder="e.g. 12"></div>
+          </div>
+          <div class="form-two">
+            <div><label class="field-label" for="soil">Soil condition</label><select id="soil">
+                <option value="">Select if known</option>
+                <option>Dry</option>
+                <option>Moist</option>
+                <option>Waterlogged</option>
+              </select></div>
+            <div><label class="field-label" for="stageRisk">Growth stage</label><select id="stageRisk">
+                <option value="">Select stage</option>
+                <option>Seedling</option>
+                <option>Vegetative</option>
+                <option>Flowering</option>
+                <option>Fruiting / grain filling</option>
+                <option>Maturity</option>
+              </select></div>
+          </div>
+          <button class="btn btn-primary btn-wide" id="riskBtn">Review inputs <span>→</span></button>
+          <p class="tiny-note">This checks whether the form is complete; it does not calculate disease risk.</p>
         </article>
-        <article class="panel factor-panel"><div class="panel-heading"><div><h2>What shapes risk?</h2><p>Factors a future prediction model may consider.</p></div></div>
-          <div class="factor-row"><span class="factor-icon">☁</span><div><strong>Weather patterns</strong><p>Humidity, temperature, rainfall and leaf-wetness conditions, when available.</p></div></div>
-          <div class="factor-row"><span class="factor-icon">♧</span><div><strong>Crop & growth stage</strong><p>Crop variety, development stage and known disease susceptibility.</p></div></div>
-          <div class="factor-row"><span class="factor-icon">▦</span><div><strong>Soil & field context</strong><p>Soil moisture, drainage and relevant field observations.</p></div></div>
-          <div class="factor-row"><span class="factor-icon">◷</span><div><strong>Recent history</strong><p>Previous disease observations and the timing of local conditions.</p></div></div>
+        <article class="panel factor-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>What shapes risk?</h2>
+              <p>Factors a future prediction model may consider.</p>
+            </div>
+          </div>
+          <div class="factor-row"><span class="factor-icon">☁</span>
+            <div><strong>Weather patterns</strong>
+              <p>Humidity, temperature, rainfall and leaf-wetness conditions, when available.</p>
+            </div>
+          </div>
+          <div class="factor-row"><span class="factor-icon">♧</span>
+            <div><strong>Crop & growth stage</strong>
+              <p>Crop variety, development stage and known disease susceptibility.</p>
+            </div>
+          </div>
+          <div class="factor-row"><span class="factor-icon">▦</span>
+            <div><strong>Soil & field context</strong>
+              <p>Soil moisture, drainage and relevant field observations.</p>
+            </div>
+          </div>
+          <div class="factor-row"><span class="factor-icon">◷</span>
+            <div><strong>Recent history</strong>
+              <p>Previous disease observations and the timing of local conditions.</p>
+            </div>
+          </div>
           <div class="inline-alert hidden" id="riskFeedback"></div>
         </article>
       </div>
     </section>
 
     <section class="page" id="page-advice">
-      <div class="page-title-row"><div><div class="eyebrow">PRACTICAL NEXT STEPS</div><h1>Advice & Remedies</h1><p class="subhead">Understand what to check, how to prevent problems, and when to seek expert help.</p></div></div>
-      <div class="advice-intro"><div class="advice-illustration">♧</div><div><span class="eyebrow">PERSONALIZED GUIDANCE</span><h2>Advice works best with a confirmed diagnosis.</h2><p>Choose a crop issue or start with general prevention. Treatment suggestions should be verified for the crop, disease and local conditions.</p><button class="btn btn-primary" data-go="analyze">Start with crop analysis <span>→</span></button></div></div>
-      <div class="section-heading"><div><h2>Explore guidance</h2><p>General starting points, not a diagnosis or pesticide prescription.</p></div></div>
-      <div class="advice-grid">
-        <article class="advice-card"><span class="advice-card-icon green">⌕</span><h3>Check symptoms</h3><p>Look at the full plant, both sides of leaves, stems and nearby plants. Note when symptoms first appeared.</p><button class="text-link" data-go="analyze">Analyze a photo <span>→</span></button></article>
-        <article class="advice-card"><span class="advice-card-icon yellow">☼</span><h3>Reduce preventable stress</h3><p>Follow crop-appropriate watering and drainage practices. Avoid unnecessary leaf wetness where relevant.</p><button class="text-link" data-go="risk">Review risk factors <span>→</span></button></article>
-        <article class="advice-card"><span class="advice-card-icon blue">♧</span><h3>Monitor the field</h3><p>Record where symptoms appear and whether they spread. Keep dated photos to compare changes.</p><button class="text-link" data-go="crops">Open crop records <span>→</span></button></article>
-        <article class="advice-card"><span class="advice-card-icon rose">✚</span><h3>Use treatments safely</h3><p>Confirm the disease first. Follow the product label, protective measures, and pre-harvest intervals.</p><button class="text-link" id="safetyBtn">Read safety note <span>→</span></button></article>
+      <div class="page-title-row">
+        <div>
+          <div class="eyebrow">PRACTICAL NEXT STEPS</div>
+          <h1>Advice & Remedies</h1>
+          <p class="subhead">Understand what to check, how to prevent problems, and when to seek expert help.</p>
+        </div>
       </div>
-      <div class="safety-banner"><span>ⓘ</span><div><strong>Important</strong><p>Do not apply a pesticide based only on an unverified AI result. Confirm the diagnosis and use products registered for the specific crop and issue, following the label and local agricultural guidance.</p></div></div>
+      <div class="advice-intro">
+        <div class="advice-illustration">♧</div>
+        <div><span class="eyebrow">PERSONALIZED GUIDANCE</span>
+          <h2>Advice works best with a confirmed diagnosis.</h2>
+          <p>Choose a crop issue or start with general prevention. Treatment suggestions should be verified for the
+            crop, disease and local conditions.</p><button class="btn btn-primary" data-go="analyze">Start with crop
+            analysis <span>→</span></button>
+        </div>
+      </div>
+      <div class="section-heading">
+        <div>
+          <h2>Explore guidance</h2>
+          <p>General starting points, not a diagnosis or pesticide prescription.</p>
+        </div>
+      </div>
+      <div class="advice-grid">
+        <article class="advice-card"><span class="advice-card-icon green">⌕</span>
+          <h3>Check symptoms</h3>
+          <p>Look at the full plant, both sides of leaves, stems and nearby plants. Note when symptoms first appeared.
+          </p><button class="text-link" data-go="analyze">Analyze a photo <span>→</span></button>
+        </article>
+        <article class="advice-card"><span class="advice-card-icon yellow">☼</span>
+          <h3>Reduce preventable stress</h3>
+          <p>Follow crop-appropriate watering and drainage practices. Avoid unnecessary leaf wetness where relevant.</p>
+          <button class="text-link" data-go="risk">Review risk factors <span>→</span></button>
+        </article>
+        <article class="advice-card"><span class="advice-card-icon blue">♧</span>
+          <h3>Monitor the field</h3>
+          <p>Record where symptoms appear and whether they spread. Keep dated photos to compare changes.</p><button
+            class="text-link" data-go="crops">Open crop records <span>→</span></button>
+        </article>
+        <article class="advice-card"><span class="advice-card-icon rose">✚</span>
+          <h3>Use treatments safely</h3>
+          <p>Confirm the disease first. Follow the product label, protective measures, and pre-harvest intervals.</p>
+          <button class="text-link" id="safetyBtn">Read safety note <span>→</span></button>
+        </article>
+      </div>
+      <div class="safety-banner"><span>ⓘ</span>
+        <div><strong>Important</strong>
+          <p>Do not apply a pesticide based only on an unverified AI result. Confirm the diagnosis and use products
+            registered for the specific crop and issue, following the label and local agricultural guidance.</p>
+        </div>
+      </div>
     </section>
 
     <section class="page" id="page-stores">
-      <div class="page-title-row"><div><div class="eyebrow">LOCAL AGRICULTURAL NETWORK</div><h1>Nearby Stores</h1><p class="subhead">Find agricultural suppliers and keep product research connected to your crop needs.</p></div><button class="btn btn-outline" id="setLocationStore">⌖ Set location</button></div>
-      <div class="store-search panel"><div class="searchbox"><span>⌕</span><input id="storeSearch" placeholder="Search by store name or product type..." /></div><button class="btn btn-primary" id="storeSearchBtn">Search</button></div>
-      <div class="store-layout"><div class="store-list" id="storeList">
-        <article class="store-card"><div class="store-symbol">⌂</div><div class="store-card-info"><div class="store-card-top"><h3>Find an agricultural supplier</h3><span class="status neutral">Location needed</span></div><p>Set your location to search for nearby fertilizer, seed and crop-protection suppliers.</p><div class="store-tags"><span>Seeds</span><span>Fertilizers</span><span>Crop care</span></div><button class="text-link" id="storeLocationLink">Set farm location <span>→</span></button></div></article>
-        <article class="store-card demo-store"><div class="store-symbol">✚</div><div class="store-card-info"><div class="store-card-top"><h3>What to verify before visiting</h3></div><p>Call the supplier to confirm product stock, crop suitability, packaging and expiry date before travelling.</p><div class="store-tags"><span>Verify stock</span><span>Check label</span></div></div></article>
-      </div><aside class="map-placeholder"><div class="map-grid"></div><div class="map-pin">⌖</div><div class="map-copy"><strong>Your supplier map</strong><span>Set a location and connect a maps service to show real shops.</span></div><button class="btn btn-outline" id="mapLocationBtn">Set location</button></aside></div>
-      <div class="disclaimer"><span>ⓘ</span> This prototype does not fetch live shop listings or inventory. Store names, availability and distance will only appear after a location/maps service is connected.</div>
+      <div class="page-title-row">
+        <div>
+          <div class="eyebrow">LOCAL AGRICULTURAL NETWORK</div>
+          <h1>Nearby Stores</h1>
+          <p class="subhead">Find agricultural suppliers and keep product research connected to your crop needs.</p>
+        </div><button class="btn btn-outline" id="setLocationStore">⌖ Set location</button>
+      </div>
+      <div class="store-search panel">
+        <div class="searchbox"><span>⌕</span><input id="storeSearch"
+            placeholder="Search by store name or product type..." /></div><button class="btn btn-primary"
+          id="storeSearchBtn">Search</button>
+      </div>
+      <div class="store-layout">
+        <div class="store-list" id="storeList">
+          <article class="store-card">
+            <div class="store-symbol">⌂</div>
+            <div class="store-card-info">
+              <div class="store-card-top">
+                <h3>Find an agricultural supplier</h3><span class="status neutral">Location needed</span>
+              </div>
+              <p>Set your location to search for nearby fertilizer, seed and crop-protection suppliers.</p>
+              <div class="store-tags"><span>Seeds</span><span>Fertilizers</span><span>Crop care</span></div><button
+                class="text-link" id="storeLocationLink">Set farm location <span>→</span></button>
+            </div>
+          </article>
+          <article class="store-card demo-store">
+            <div class="store-symbol">✚</div>
+            <div class="store-card-info">
+              <div class="store-card-top">
+                <h3>What to verify before visiting</h3>
+              </div>
+              <p>Call the supplier to confirm product stock, crop suitability, packaging and expiry date before
+                travelling.</p>
+              <div class="store-tags"><span>Verify stock</span><span>Check label</span></div>
+            </div>
+          </article>
+        </div>
+        <aside class="map-placeholder">
+          <div class="map-grid"></div>
+          <div class="map-pin">⌖</div>
+          <div class="map-copy"><strong>Your supplier map</strong><span>Set a location and connect a maps service to
+              show real shops.</span></div><button class="btn btn-outline" id="mapLocationBtn">Set location</button>
+        </aside>
+      </div>
+      <div class="disclaimer"><span>ⓘ</span> This prototype does not fetch live shop listings or inventory. Store names,
+        availability and distance will only appear after a location/maps service is connected.</div>
     </section>
 
-    <footer class="footer"><span>✳ CropShield AI</span><span>Designed for practical crop-health decisions</span><span>Prototype · 2026</span></footer>
+    <footer class="footer"><span>✳ CropGuard AI</span><span>Designed for practical crop-health
+        decisions</span><span>Prototype · 2026</span></footer>
   </main>
 
   <div class="toast" id="toast" role="status"></div>
-  <dialog id="cropDialog" class="modal"><form method="dialog" id="cropForm"><div class="modal-head"><div><span class="eyebrow">CROP RECORD</span><h2 id="cropDialogTitle">Add a crop</h2></div><button class="modal-close" aria-label="Close">×</button></div><label class="field-label" for="newCropName">Crop name</label><input id="newCropName" placeholder="e.g. Onion" required /><label class="field-label" for="newCropVariety">Variety (optional)</label><input id="newCropVariety" placeholder="Enter variety" /><label class="field-label" for="newCropLocation">Field location (optional)</label><input id="newCropLocation" placeholder="Village or field name" /><label class="field-label" for="newCropStage">Growth stage</label><select id="newCropStage"><option value="">Not specified</option><option>Seedling</option><option>Vegetative</option><option>Flowering</option><option>Fruiting / grain filling</option><option>Maturity</option></select><div class="modal-actions"><button type="button" class="btn btn-outline" id="cancelCrop">Cancel</button><button type="submit" class="btn btn-primary">Save crop</button></div></form></dialog>
-  <dialog id="locationDialog" class="modal"><form method="dialog" id="locationForm"><div class="modal-head"><div><span class="eyebrow">LOCAL CONTEXT</span><h2>Set farm location</h2></div><button class="modal-close" aria-label="Close">×</button></div><p class="modal-copy">Enter a village, town or district to label this demo workspace. This does not fetch live weather or store listings.</p><label class="field-label" for="locationInput">Farm location</label><input id="locationInput" placeholder="e.g. Pune, Maharashtra" required /><div class="modal-actions"><button type="button" class="btn btn-outline" id="cancelLocation">Cancel</button><button type="submit" class="btn btn-primary">Save location</button></div></form></dialog>
-  <dialog id="infoDialog" class="modal"><form method="dialog"><div class="modal-head"><div><span class="eyebrow">CROPSHIELD AI</span><h2 id="infoTitle">Quick guide</h2></div><button class="modal-close" aria-label="Close">×</button></div><p class="modal-copy" id="infoCopy"></p><div class="modal-actions"><button class="btn btn-primary">Got it</button></div></form></dialog>
+  <dialog id="cropDialog" class="modal">
+    <form method="dialog" id="cropForm">
+      <div class="modal-head">
+        <div><span class="eyebrow">CROP RECORD</span>
+          <h2 id="cropDialogTitle">Add a crop</h2>
+        </div><button class="modal-close" aria-label="Close">×</button>
+      </div><label class="field-label" for="newCropName">Crop name</label><input id="newCropName"
+        placeholder="e.g. Onion" required /><label class="field-label" for="newCropVariety">Variety
+        (optional)</label><input id="newCropVariety" placeholder="Enter variety" /><label class="field-label"
+        for="newCropLocation">Field location (optional)</label><input id="newCropLocation"
+        placeholder="Village or field name" /><label class="field-label" for="newCropStage">Growth stage</label><select
+        id="newCropStage">
+        <option value="">Not specified</option>
+        <option>Seedling</option>
+        <option>Vegetative</option>
+        <option>Flowering</option>
+        <option>Fruiting / grain filling</option>
+        <option>Maturity</option>
+      </select>
+      <div class="modal-actions"><button type="button" class="btn btn-outline" id="cancelCrop">Cancel</button><button
+          type="submit" class="btn btn-primary">Save crop</button></div>
+    </form>
+  </dialog>
+  <dialog id="locationDialog" class="modal">
+    <form method="dialog" id="locationForm">
+      <div class="modal-head">
+        <div><span class="eyebrow">LOCAL CONTEXT</span>
+          <h2>Set farm location</h2>
+        </div><button class="modal-close" aria-label="Close">×</button>
+      </div>
+      <p class="modal-copy">Enter a village, town or district to label this demo workspace. This does not fetch live
+        weather or store listings.</p><label class="field-label" for="locationInput">Farm location</label><input
+        id="locationInput" placeholder="e.g. Pune, Maharashtra" required />
+      <div class="modal-actions"><button type="button" class="btn btn-outline"
+          id="cancelLocation">Cancel</button><button type="submit" class="btn btn-primary">Save location</button></div>
+    </form>
+  </dialog>
+  <dialog id="infoDialog" class="modal">
+    <form method="dialog">
+      <div class="modal-head">
+        <div><span class="eyebrow">CROPGUARD AI</span>
+          <h2 id="infoTitle">Quick guide</h2>
+        </div><button class="modal-close" aria-label="Close">×</button>
+      </div>
+      <p class="modal-copy" id="infoCopy"></p>
+      <div class="modal-actions"><button class="btn btn-primary">Got it</button></div>
+    </form>
+  </dialog>
   <script src="script.js"></script>
 </body>
+
 </html>

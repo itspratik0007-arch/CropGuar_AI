@@ -15,25 +15,27 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(() => {
-    const saved = localStorage.getItem('cropshield_user');
+    const saved = localStorage.getItem('cropguard_user') || localStorage.getItem('cropshield_user');
     return saved ? JSON.parse(saved) : null;
   });
   const [token, setToken] = useState<string | null>(() => {
-    return localStorage.getItem('cropshield_token');
+    return localStorage.getItem('cropguard_token') || localStorage.getItem('cropshield_token');
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function verifyAuth() {
-      const storedToken = localStorage.getItem('cropshield_token');
+      const storedToken = localStorage.getItem('cropguard_token') || localStorage.getItem('cropshield_token');
       if (storedToken) {
         try {
           const freshUser = await api.getMe();
           setUser(freshUser);
-          localStorage.setItem('cropshield_user', JSON.stringify(freshUser));
+          localStorage.setItem('cropguard_user', JSON.stringify(freshUser));
         } catch {
           setUser(null);
           setToken(null);
+          localStorage.removeItem('cropguard_token');
+          localStorage.removeItem('cropguard_user');
           localStorage.removeItem('cropshield_token');
           localStorage.removeItem('cropshield_user');
         }
@@ -53,8 +55,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = (newToken: string, newUser: User) => {
-    localStorage.setItem('cropshield_token', newToken);
-    localStorage.setItem('cropshield_user', JSON.stringify(newUser));
+    localStorage.setItem('cropguard_token', newToken);
+    localStorage.setItem('cropguard_user', JSON.stringify(newUser));
     setToken(newToken);
     setUser(newUser);
   };
@@ -65,6 +67,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch {
       // Continue client cleanup even if API fails
     } finally {
+      localStorage.removeItem('cropguard_token');
+      localStorage.removeItem('cropguard_user');
       localStorage.removeItem('cropshield_token');
       localStorage.removeItem('cropshield_user');
       setToken(null);
@@ -74,7 +78,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const updateUser = (updated: User) => {
     setUser(updated);
-    localStorage.setItem('cropshield_user', JSON.stringify(updated));
+    localStorage.setItem('cropguard_user', JSON.stringify(updated));
   };
 
   return (

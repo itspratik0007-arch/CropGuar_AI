@@ -234,7 +234,7 @@ export const DiseaseDetectionPage: React.FC = () => {
               </h1>
               <p className="text-sm text-[#616e63] mt-2 max-w-2xl leading-relaxed">
                 Upload clear photographs of crop leaves displaying lesions, discoloration, or wilt symptoms.
-                CropShield AI evaluates image characteristics through a fine-tuned MobileNetV2 neural vision classifier
+                CropGuard AI evaluates image characteristics through a fine-tuned MobileNetV2 neural vision classifier
                 to suggest probable diagnostic matches alongside non-chemical management precautions.
               </p>
             </div>
@@ -614,7 +614,7 @@ export const DiseaseDetectionPage: React.FC = () => {
                 </span>
               </h2>
               <p className="text-xs text-[#717e72] mt-0.5">
-                Isolated diagnosis log linked securely to your CropShield account.
+                Isolated diagnosis log linked securely to your CropGuard account.
               </p>
             </div>
 

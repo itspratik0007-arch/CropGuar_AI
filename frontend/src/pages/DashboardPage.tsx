@@ -366,7 +366,7 @@ export const DashboardPage: React.FC = () => {
           <div className="mt-5 p-3 bg-[#fff5df] border border-[#f4e0ba] rounded-xl text-[11px] text-[#a76d14] flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>
-              CropShield AI does not fabricate disease predictions without validated models.
+              CropGuard AI does not fabricate disease predictions without validated models.
             </span>
           </div>
         </div>

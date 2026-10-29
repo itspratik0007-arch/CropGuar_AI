@@ -77,7 +77,7 @@ export const AuthPage: React.FC<AuthModalProps> = ({ initialMode = 'login' }) =>
         </div>
         <div>
           <span className="text-xl font-extrabold tracking-tight text-[#26332b]">
-            CropShield <span className="text-[#37774b]">AI</span>
+            CropGuard <span className="text-[#37774b]">AI</span>
           </span>
           <span className="block text-[11px] text-[#788279] font-medium tracking-wide">
             Crop Health Intelligence
@@ -102,7 +102,7 @@ export const AuthPage: React.FC<AuthModalProps> = ({ initialMode = 'login' }) =>
           <p className="text-xs text-[#788279] mt-1">
             {isLogin
               ? 'Access your authenticated crop records and Plantopedia.'
-              : 'Join CropShield AI to organize crops and explore botanical guidance.'}
+              : 'Join CropGuard AI to organize crops and explore botanical guidance.'}
           </p>
         </div>
 
@@ -227,7 +227,7 @@ export const AuthPage: React.FC<AuthModalProps> = ({ initialMode = 'login' }) =>
       </div>
 
       <div className="mt-8 text-center text-xs text-[#9aa196]">
-        CropShield AI · Protected by Argon2id password encryption & JWT tokens.
+        CropGuard AI · Protected by Argon2id password encryption & JWT tokens.
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-# CropShield AI — Phase 1 Working Application
+# CropGuard AI — Phase 1 Working Application
 
-CropShield AI is an intelligent crop-health intelligence platform. This repository contains the complete **Phase 1** implementation, featuring secure user authentication, persistent database storage, an interactive authenticated dashboard, a botanical Plantopedia with external API integration & curated fallback data, and a dummy agricultural supplier directory.
+CropGuard AI is an intelligent crop-health intelligence platform. This repository contains the complete **Phase 1** implementation, featuring secure user authentication, persistent database storage, an interactive authenticated dashboard, a botanical Plantopedia with external API integration & curated fallback data, and a dummy agricultural supplier directory.
 
 ---
 
