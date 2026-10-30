@@ -72,6 +72,7 @@ class DiseaseModelService:
             os.path.join(os.getcwd(), "backend", self.model_filename),
             os.path.join(os.getcwd(), self.model_filename),
             os.path.abspath(os.path.join(os.path.dirname(__file__), "..", self.model_filename)),
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", self.model_filename)),
         ]
         for p in candidates:
             if os.path.isfile(p):

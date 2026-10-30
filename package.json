@@ -1,5 +1,9 @@
 {
-  "dependencies": {
-    "express": "^5.3.0"
+  "name": "cropguard-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "dev": "npm --prefix frontend run dev"
   }
 }

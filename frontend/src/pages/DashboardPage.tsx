@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
@@ -50,12 +50,12 @@ export const DashboardPage: React.FC = () => {
     }
   };
 
-  const getTimeGreeting = () => {
+  const timeGreeting = useMemo(() => {
     const hour = new Date().getHours();
     if (hour < 12) return 'Good morning';
     if (hour < 18) return 'Good afternoon';
     return 'Good evening';
-  };
+  }, []);
 
   return (
     <Layout activeTitle="Dashboard">
@@ -67,7 +67,7 @@ export const DashboardPage: React.FC = () => {
             YOUR FARM AT A GLANCE
           </div>
           <h1 className="text-2xl md:text-3xl font-extrabold text-[#26332b] tracking-tight">
-            {getTimeGreeting()}, {user?.full_name?.split(' ')[0] || 'Farmer'} <span className="text-[#d7a54c]">☀</span>
+            {timeGreeting}, {user?.full_name?.split(' ')[0] || 'Farmer'} <span className="text-[#d7a54c]">☀</span>
           </h1>
           <p className="text-xs text-[#788279] mt-0.5">
             Phase 1 workspace connected to your live database profile.

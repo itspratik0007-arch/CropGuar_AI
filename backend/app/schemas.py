@@ -1,6 +1,6 @@
 from typing import Optional, List
 from datetime import datetime
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, ConfigDict
 
 # User Schemas
 class UserRegister(BaseModel):
@@ -20,8 +20,7 @@ class UserResponse(BaseModel):
     farm_location: Optional[str] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class TokenResponse(BaseModel):
     access_token: str
@@ -56,8 +55,7 @@ class PlantResponse(BaseModel):
     updated_at: Optional[datetime] = None
     is_bookmarked: bool = False
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class PlantSearchResponse(BaseModel):
     items: List[PlantResponse]
@@ -76,8 +74,7 @@ class MessageResponse(BaseModel):
     model_metadata: Optional[str] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ConversationSummaryResponse(BaseModel):
     id: int
@@ -89,8 +86,7 @@ class ConversationSummaryResponse(BaseModel):
     message_count: int = 0
     last_message: Optional[str] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ConversationDetailResponse(BaseModel):
     id: int
@@ -101,8 +97,7 @@ class ConversationDetailResponse(BaseModel):
     updated_at: datetime
     messages: List[MessageResponse]
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ChatRequest(BaseModel):
     message: str = Field(..., min_length=1, max_length=4000)
@@ -176,8 +171,7 @@ class DiseaseDetectionResponse(BaseModel):
     disease_info: Optional[DiseaseInfo] = None
     plantopedia_plant_id: Optional[int] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class DiseaseHistoryItem(BaseModel):
     id: int
@@ -190,8 +184,7 @@ class DiseaseHistoryItem(BaseModel):
     image_reference: Optional[str] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class DiseaseModelStatusResponse(BaseModel):
     is_configured: bool

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Layout } from '../components/Layout';
 import { api } from '../services/api';
 import type { DemoStore } from '../types';
@@ -23,7 +23,7 @@ export const NearbyStoresPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [error, setError] = useState<string | null>(null);
 
-  const fetchStores = async () => {
+  const fetchStores = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -34,11 +34,11 @@ export const NearbyStoresPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [search, selectedCategory]);
 
   useEffect(() => {
     fetchStores();
-  }, [selectedCategory]);
+  }, [fetchStores]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { api } from '../services/api';
@@ -63,7 +63,7 @@ export const PlantopediaPage: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Fetch plant catalog
-  const fetchPlants = async (searchStr: string) => {
+  const fetchPlants = useCallback(async (searchStr: string) => {
     setLoading(true);
     setError(null);
     try {
@@ -81,11 +81,11 @@ export const PlantopediaPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filterSavedOnly]);
 
   useEffect(() => {
     fetchPlants(initialQuery);
-  }, [initialQuery, filterSavedOnly]);
+  }, [initialQuery, fetchPlants]);
 
   useEffect(() => {
     if (initialPlantId && plants.length > 0) {
@@ -101,18 +101,18 @@ export const PlantopediaPage: React.FC = () => {
   }, [initialPlantId, plants]);
 
   // Load user conversation list for AI assistant
-  const loadConversations = async () => {
+  const loadConversations = useCallback(async () => {
     try {
       const convList = await api.getConversations();
       setConversations(convList);
     } catch {
       // Non-blocking
     }
-  };
+  }, []);
 
   useEffect(() => {
     loadConversations();
-  }, []);
+  }, [loadConversations]);
 
   // Search input typing suggestions
   useEffect(() => {

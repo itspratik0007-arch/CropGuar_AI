@@ -1,7 +1,7 @@
 import json
 import logging
 from typing import List, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
@@ -264,7 +264,7 @@ async def chat_with_assistant(
             conversation_id=conv.id,
             role="user",
             content=user_query,
-            created_at=datetime.utcnow()
+            created_at=datetime.now(timezone.utc)
         )
         db.add(user_msg)
 
@@ -279,12 +279,12 @@ async def chat_with_assistant(
             role="assistant",
             content=ai_result.get("content", ""),
             model_metadata=meta_json,
-            created_at=datetime.utcnow()
+            created_at=datetime.now(timezone.utc)
         )
         db.add(asst_msg)
 
         # Update conversation timestamp
-        conv.updated_at = datetime.utcnow()
+        conv.updated_at = datetime.now(timezone.utc)
         db.commit()
         db.refresh(asst_msg)
 

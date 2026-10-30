@@ -5,6 +5,9 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 from app.database import Base
 
+def utc_now():
+    return datetime.datetime.now(datetime.timezone.utc)
+
 class User(Base):
     __tablename__ = "users"
 
@@ -14,8 +17,8 @@ class User(Base):
     hashed_password = Column(String(255), nullable=False)
     farm_location = Column(String(255), nullable=True, default="Demo farm")
     preferences = Column(Text, nullable=True, default="{}")  # JSON or text user preferences
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=utc_now, nullable=False)
+    updated_at = Column(DateTime, default=utc_now, onupdate=utc_now, nullable=False)
 
     bookmarks = relationship("Bookmark", back_populates="user", cascade="all, delete-orphan")
     detections = relationship("DiseaseDetection", back_populates="user", cascade="all, delete-orphan")
@@ -47,8 +50,8 @@ class Plant(Base):
     source_type = Column(String(50), nullable=False, default="curated_local")  # curated_local or external_api
     data_source = Column(String(255), nullable=True, default="Curated Botanical Knowledgebase")
     external_api_id = Column(String(100), nullable=True, index=True)
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=utc_now, nullable=False)
+    updated_at = Column(DateTime, default=utc_now, onupdate=utc_now, nullable=False)
 
     bookmarks = relationship("Bookmark", back_populates="plant", cascade="all, delete-orphan")
     conversations = relationship("PlantConversation", back_populates="plant", cascade="all, delete-orphan")
@@ -61,7 +64,7 @@ class Bookmark(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
     plant_id = Column(Integer, ForeignKey("plants.id", ondelete="CASCADE"), nullable=False, index=True)
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=utc_now, nullable=False)
 
     user = relationship("User", back_populates="bookmarks")
     plant = relationship("Plant", back_populates="bookmarks")
@@ -79,8 +82,8 @@ class PlantConversation(Base):
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
     plant_id = Column(Integer, ForeignKey("plants.id", ondelete="SET NULL"), nullable=True, index=True)
     title = Column(String(255), nullable=False, default="Plant Inquiry")
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False, index=True)
-    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False, index=True)
+    created_at = Column(DateTime, default=utc_now, nullable=False, index=True)
+    updated_at = Column(DateTime, default=utc_now, onupdate=utc_now, nullable=False, index=True)
 
     user = relationship("User", back_populates="conversations")
     plant = relationship("Plant", back_populates="conversations")
@@ -99,7 +102,7 @@ class ConversationMessage(Base):
     role = Column(String(20), nullable=False)  # user, assistant, system
     content = Column(Text, nullable=False)
     model_metadata = Column(Text, nullable=True)  # JSON metadata (e.g. model, latency, tokens, source)
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False, index=True)
+    created_at = Column(DateTime, default=utc_now, nullable=False, index=True)
 
     conversation = relationship("PlantConversation", back_populates="messages")
 
@@ -121,7 +124,7 @@ class DiseaseDetection(Base):
     model_version = Column(String(100), nullable=False, default="mobilenet_v2_plantvillage_v1")
     image_reference = Column(String(500), nullable=True)  # sanitized generated filename or data ref
     status = Column(String(50), nullable=False, default="completed")
-    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False, index=True)
+    created_at = Column(DateTime, default=utc_now, nullable=False, index=True)
 
     user = relationship("User", back_populates="detections")
     plant = relationship("Plant", back_populates="detections")

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { api } from '../services/api';
@@ -63,31 +63,16 @@ export const DiseaseDetectionPage: React.FC = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Load Model Status and Detection History on mount
-  useEffect(() => {
-    loadModelStatus();
-    loadHistory();
-  }, []);
-
-  // Cleanup object URLs to prevent memory leaks
-  useEffect(() => {
-    return () => {
-      if (previewUrl && previewUrl.startsWith('blob:')) {
-        URL.revokeObjectURL(previewUrl);
-      }
-    };
-  }, [previewUrl]);
-
-  const loadModelStatus = async () => {
+  const loadModelStatus = useCallback(async () => {
     try {
       const status = await api.getModelStatus();
       setModelStatus(status);
     } catch {
       // Non-blocking status error
     }
-  };
+  }, []);
 
-  const loadHistory = async () => {
+  const loadHistory = useCallback(async () => {
     setHistoryLoading(true);
     try {
       const items = await api.getDetectionHistory(25, 0);
@@ -97,7 +82,22 @@ export const DiseaseDetectionPage: React.FC = () => {
     } finally {
       setHistoryLoading(false);
     }
-  };
+  }, []);
+
+  // Load Model Status and Detection History on mount
+  useEffect(() => {
+    loadModelStatus();
+    loadHistory();
+  }, [loadModelStatus, loadHistory]);
+
+  // Cleanup object URLs to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (previewUrl && previewUrl.startsWith('blob:')) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
 
   const handleFileSelection = (file: File) => {
     setError(null);

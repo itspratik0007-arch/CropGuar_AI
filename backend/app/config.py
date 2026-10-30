@@ -25,6 +25,13 @@ class Settings(BaseSettings):
     WEATHER_API_BASE_URL: str = "https://api.openweathermap.org/data/2.5"
     CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
 
+    @property
+    def effective_database_url(self) -> str:
+        # If running in serverless environment (e.g. Vercel) and using default SQLite, use writable /tmp
+        if (os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME")) and self.DATABASE_URL == "sqlite:///./cropshield.db":
+            return "sqlite:////tmp/cropshield.db"
+        return self.DATABASE_URL
+
     model_config = SettingsConfigDict(
         env_file=(".env", "../.env"),
         env_file_encoding="utf-8",

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
@@ -24,6 +24,14 @@ app = FastAPI(
     description="Backend API for CropGuard AI: Authentication, Plantopedia, Conversational AI Plant Assistant, User Dashboard, Demo Stores, and Plant Disease Detection.",
     lifespan=lifespan
 )
+
+@app.middleware("http")
+async def normalize_api_path(request: Request, call_next):
+    # Supports both /api/auth and /auth routing transparently for serverless gateways
+    known_prefixes = ("/auth", "/plants", "/dashboard", "/stores", "/disease", "/plant-assistant")
+    if any(request.url.path.startswith(prefix) for prefix in known_prefixes):
+        request.scope["path"] = f"/api{request.scope['path']}"
+    return await call_next(request)
 
 app.add_middleware(
     CORSMiddleware,
